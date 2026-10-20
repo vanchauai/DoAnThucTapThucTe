@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.shape.Circle?>
+
+<BorderPane fx:id="mainLayout" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.doanthuctap.desktop.controller.MainController" style="-fx-background-color: #12243D;">
+    
+    <!-- Top Navigation Bar -->
+    <top>
+        <HBox alignment="CENTER_LEFT" style="-fx-background-color: #0F1D30; -fx-padding: 0 20 0 0; -fx-pref-height: 60;">
+            <!-- Brand / Logo (Aligns with sidebar) -->
+            <HBox alignment="CENTER_LEFT" prefWidth="240" style="-fx-padding: 0 0 0 25;">
+                <Label text="SmartSyncVN" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" />
+            </HBox>
+            
+
+            <Region HBox.hgrow="ALWAYS" />
+            
+            <!-- Right Profile section -->
+            <HBox alignment="CENTER" spacing="15">
+                <Region style="-fx-pref-width: 15;" />
+                
+                <Label fx:id="lblTopHello" text="Hello Role" style="-fx-text-fill: white; -fx-font-size: 14px;" />
+                <!-- Profile Avatar -->
+                <StackPane>
+                    <Circle radius="16" fill="#3B82F6" />
+                    <Label fx:id="lblTopAvatarLetter" text="R" style="-fx-text-fill: white; -fx-font-weight: bold;" />
+                </StackPane>
+                
+                <!-- Logout icon -->
+                <Button onAction="#handleLogout" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-padding: 0;">
+                    <graphic>
+                        <SVGPath content="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z" fill="#94A3B8" />
+                    </graphic>
+                </Button>
+            </HBox>
+        </HBox>
+    </top>
+
+    <!-- Sidebar -->
+    <left>
+        <VBox style="-fx-background-color: #0F1D30; -fx-padding: 20 10 20 10;" prefWidth="240" spacing="5">
+            <!-- Sidebar Items -->
+            <Button text="Dashboard" onAction="#showDashboard" maxWidth="Infinity" alignment="BASELINE_LEFT" style="-fx-background-color: #173B62; -fx-text-fill: white; -fx-padding: 12 15; -fx-background-radius: 8; -fx-font-size: 14px; -fx-cursor: hand; -fx-graphic-text-gap: 15;">
+                <graphic>
+                    <SVGPath content="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" fill="white" scaleX="0.8" scaleY="0.8"/>
+                </graphic>
+            </Button>
+            
+            <Button text="Nguồn dữ liệu" onAction="#showDataSource" maxWidth="Infinity" alignment="BASELINE_LEFT" style="-fx-background-color: transparent; -fx-text-fill: #94A3B8; -fx-padding: 12 15; -fx-background-radius: 8; -fx-font-size: 14px; -fx-cursor: hand; -fx-graphic-text-gap: 15;">
+                <graphic>
+                    <SVGPath content="M4 6h16v12H4zm2 2v8h12V8H6zm2 2h8v2H8v-2z" fill="#94A3B8" scaleX="0.8" scaleY="0.8"/>
+                </graphic>
+            </Button>
+
+            <Button text="Báo cáo" onAction="#showReport" maxWidth="Infinity" alignment="BASELINE_LEFT" style="-fx-background-color: transparent; -fx-text-fill: #94A3B8; -fx-padding: 12 15; -fx-background-radius: 8; -fx-font-size: 14px; -fx-cursor: hand; -fx-graphic-text-gap: 15;">
+                <graphic>
+                    <SVGPath content="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 9h-2V7h2v5zm4 0h-2V9h2v3zm-8 0H6v-2h2v2zm8 4H6v-2h12v2z" fill="#94A3B8" scaleX="0.8" scaleY="0.8"/>
+                </graphic>
+            </Button>
+            
+            <Button text="Dự đoán doanh thu" onAction="#showPrediction" maxWidth="Infinity" alignment="BASELINE_LEFT" style="-fx-background-color: transparent; -fx-text-fill: #94A3B8; -fx-padding: 12 15; -fx-background-radius: 8; -fx-font-size: 14px; -fx-cursor: hand; -fx-graphic-text-gap: 15;">
+                <graphic>
+                    <SVGPath content="M16 11l-3-3-3 3-4-4v3l4 4 3-3 3 3 3-3z" fill="#94A3B8" scaleX="0.8" scaleY="0.8"/>
+                </graphic>
+            </Button>
+            
+            <Button text="Trợ lý dữ liệu" onAction="#showDataAssistant" maxWidth="Infinity" alignment="BASELINE_LEFT" style="-fx-background-color: transparent; -fx-text-fill: #94A3B8; -fx-padding: 12 15; -fx-background-radius: 8; -fx-font-size: 14px; -fx-cursor: hand; -fx-graphic-text-gap: 15;">
+                <graphic>
+                    <SVGPath content="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#94A3B8" scaleX="0.8" scaleY="0.8"/>
+                </graphic>
+            </Button>
+            
+            <Button fx:id="btnScheduler" text="Cấu hình lịch" onAction="#showScheduler" maxWidth="Infinity" alignment="BASELINE_LEFT" style="-fx-background-color: transparent; -fx-text-fill: #94A3B8; -fx-padding: 12 15; -fx-background-radius: 8; -fx-font-size: 14px; -fx-cursor: hand; -fx-graphic-text-gap: 15;">
+                <graphic>
+                    <SVGPath content="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z" fill="#94A3B8" scaleX="0.8" scaleY="0.8"/>
+                </graphic>
+            </Button>
+            
+            <Button fx:id="btnUsers" text="Quản lý người dùng" onAction="#showUsers" maxWidth="Infinity" alignment="BASELINE_LEFT" style="-fx-background-color: transparent; -fx-text-fill: #94A3B8; -fx-padding: 12 15; -fx-background-radius: 8; -fx-font-size: 14px; -fx-cursor: hand; -fx-graphic-text-gap: 15;">
+                <graphic>
+                    <SVGPath content="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="#94A3B8" scaleX="0.8" scaleY="0.8"/>
+                </graphic>
+            </Button>
+
+            <Region VBox.vgrow="ALWAYS" />
+            
+            <Button text="Đổi mật khẩu" onAction="#showChangePassword" maxWidth="Infinity" alignment="BASELINE_LEFT" style="-fx-background-color: transparent; -fx-text-fill: #94A3B8; -fx-padding: 12 15; -fx-background-radius: 8; -fx-font-size: 14px; -fx-cursor: hand; -fx-graphic-text-gap: 15;">
+                <graphic>
+                    <SVGPath content="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6-5c1.66 0 3 1.34 3 3v2H9V6c0-1.66 1.34-3 3-3z" fill="#94A3B8" scaleX="0.8" scaleY="0.8"/>
+                </graphic>
+            </Button>
+            
+        </VBox>
+    </left>
+</BorderPane>

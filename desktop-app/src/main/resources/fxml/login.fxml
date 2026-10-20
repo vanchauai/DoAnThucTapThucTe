@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.Group?>
+
+<StackPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.doanthuctap.desktop.controller.LoginController" style="-fx-background-color: #F4F6F8;">
+    
+    <HBox style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 20, 0, 0, 10);" maxWidth="850" maxHeight="500">
+        
+        <!-- Left Side (Illustration area) -->
+        <VBox alignment="CENTER" style="-fx-background-color: linear-gradient(to bottom right, #3FA9F5, #21519C); -fx-background-radius: 20 0 0 20;" prefWidth="380">
+            <!-- App Logo/Name -->
+            <HBox alignment="CENTER" spacing="10">
+                <VBox.margin>
+                    <Insets bottom="50" />
+                </VBox.margin>
+                <!-- Chart icon -->
+                <SVGPath content="M3,3 L3,21 L21,21 L21,19 L5,19 L5,3 L3,3 Z M7,17 L11,17 L11,9 L7,9 L7,17 Z M13,17 L17,17 L17,5 L13,5 L13,17 Z" fill="white" scaleX="1.8" scaleY="1.8" />
+                <VBox alignment="CENTER_LEFT">
+                    <HBox.margin>
+                        <Insets left="15" />
+                    </HBox.margin>
+                    <Label text="HỆ THỐNG" style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: white;" />
+                    <Label text="Phân Tích Dữ Liệu" style="-fx-font-size: 13px; -fx-text-fill: white;" />
+                </VBox>
+            </HBox>
+            
+            <!-- Illustration: Dashboard / Analytics -->
+            <Group scaleX="3.5" scaleY="3.5">
+                <SVGPath content="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14z M7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z" fill="white" opacity="0.9" />
+                <SVGPath content="M16 11l-3-3-3 3-4-4v3l4 4 3-3 3 3 3-3z" fill="#80D0FF" opacity="0.9" />
+            </Group>
+        </VBox>
+
+        <!-- Right Side (Form area) -->
+        <VBox alignment="CENTER_LEFT" style="-fx-background-color: white; -fx-background-radius: 0 20 20 0; -fx-padding: 40 50 40 50;" prefWidth="470" spacing="15">
+            
+            <Label text="Đăng nhập" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #0056B3;">
+                <VBox.margin>
+                    <Insets bottom="10" />
+                </VBox.margin>
+            </Label>
+
+            <!-- Email Address -->
+            <VBox spacing="5">
+                <Label text="Email" style="-fx-text-fill: #999999; -fx-font-size: 13px;" />
+                <HBox alignment="CENTER_LEFT" style="-fx-border-color: #CCCCCC; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 0 10 0 15; -fx-pref-height: 45;">
+                    <!-- User Icon -->
+                    <SVGPath content="M12,12 C14.21,12 16,10.21 16,8 C16,5.79 14.21,4 12,4 C9.79,4 8,5.79 8,8 C8,10.21 9.79,12 12,12 Z M12,14 C9.33,14 4,15.34 4,18 L4,20 L20,20 L20,18 C20,15.34 14.67,14 12,14 Z" fill="#999999" />
+                    <Region style="-fx-background-color: #E0E0E0; -fx-pref-width: 1;" HBox.hgrow="NEVER">
+                        <HBox.margin>
+                            <Insets left="15" right="15" top="10" bottom="10" />
+                        </HBox.margin>
+                    </Region>
+                    <TextField fx:id="emailField" promptText="Nhập email..." style="-fx-background-color: transparent; -fx-prompt-text-fill: #AAAAAA; -fx-padding: 0; -fx-font-size: 14px;" HBox.hgrow="ALWAYS" />
+                </HBox>
+            </VBox>
+
+            <!-- Password -->
+            <VBox spacing="5">
+                <Label text="Mật khẩu" style="-fx-text-fill: #999999; -fx-font-size: 13px;" />
+                <HBox alignment="CENTER_LEFT" style="-fx-border-color: #CCCCCC; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 0 10 0 15; -fx-pref-height: 45;">
+                    <!-- Lock Icon -->
+                    <SVGPath content="M18,8 L17,8 L17,6 C17,3.24 14.76,1 12,1 C9.24,1 7,3.24 7,6 L7,8 L6,8 C4.9,8 4,8.9 4,10 L4,20 C4,21.1 4.9,22 6,22 L18,22 C19.1,22 20,21.1 20,20 L20,10 C20,8.9 19.1,8 18,8 Z M9,6 C9,4.34 10.34,3 12,3 C13.66,3 15,4.34 15,6 L15,8 L9,8 L9,6 Z M12,17 C10.9,17 10,16.1 10,15 C10,13.9 10.9,13 12,13 C13.1,13 14,13.9 14,15 C14,16.1 13.1,17 12,17 Z" fill="#999999" />
+                    <Region style="-fx-background-color: #E0E0E0; -fx-pref-width: 1;" HBox.hgrow="NEVER">
+                        <HBox.margin>
+                            <Insets left="15" right="15" top="10" bottom="10" />
+                        </HBox.margin>
+                    </Region>
+                    <StackPane HBox.hgrow="ALWAYS" alignment="CENTER_LEFT">
+                        <PasswordField fx:id="passwordField" promptText="Nhập mật khẩu..." style="-fx-background-color: transparent; -fx-prompt-text-fill: #AAAAAA; -fx-padding: 0; -fx-font-size: 14px;" />
+                        <TextField fx:id="passwordTextField" promptText="Nhập mật khẩu..." style="-fx-background-color: transparent; -fx-prompt-text-fill: #AAAAAA; -fx-padding: 0; -fx-font-size: 14px;" visible="false" />
+                    </StackPane>
+                    <Button fx:id="togglePasswordBtn" onAction="#togglePasswordVisible" style="-fx-background-color: transparent; -fx-cursor: hand; -fx-padding: 5;">
+                        <graphic>
+                            <SVGPath fx:id="eyeIcon" content="M12,4.5 C7,4.5 2.73,7.61 1,12 C2.73,16.39 7,19.5 12,19.5 C17,19.5 21.27,16.39 23,12 C21.27,7.61 17,4.5 12,4.5 Z M12,17 C9.24,17 7,14.76 7,12 C7,9.24 9.24,7 12,7 C14.76,7 17,9.24 17,12 C17,14.76 14.76,17 12,17 Z M12,9 C10.34,9 9,10.34 9,12 C9,13.66 10.34,15 12,15 C13.66,15 15,13.66 15,12 C15,10.34 13.66,9 12,9 Z" fill="#999999" />
+                        </graphic>
+                    </Button>
+                </HBox>
+            </VBox>
+            
+            <HBox alignment="CENTER_LEFT">
+                <Hyperlink text="Quên mật khẩu?" onAction="#handleForgetPassword" style="-fx-text-fill: #999999; -fx-underline: false; -fx-padding: 0; -fx-font-size: 13px;" />
+            </HBox>
+
+            <Button fx:id="loginButton" text="ĐĂNG NHẬP" onAction="#handleLogin" style="-fx-background-color: #0076D6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 20; -fx-pref-height: 45; -fx-cursor: hand; -fx-font-size: 14px;" maxWidth="Infinity">
+                <VBox.margin>
+                    <Insets top="15" />
+                </VBox.margin>
+            </Button>
+            
+            <VBox fx:id="loadingBox" alignment="CENTER" visible="false" managed="${loadingBox.visible}">
+                <Label text="Đang xử lý..." textFill="#1976D2"/>
+            </VBox>
+
+            <HBox alignment="CENTER" spacing="5">
+                <VBox.margin>
+                    <Insets top="10" />
+                </VBox.margin>
+            </HBox>
+        </VBox>
+    </HBox>
+</StackPane>

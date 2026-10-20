@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+backend/.venv/
+backend/venv/
+.venv/
+venv/
+*.sqlite3
+
+# Secrets & Environment variables
+.env
+backend/.env
+credentials/
+backend/credentials/
+*.pem
+service_account*.json
+backend/*.json
+*thuctapthucte*.json
+
+# Uploads & Exports (dữ liệu tạm thời)
+uploads/
+backend/uploads/
+exports/
+backend/exports/
+
+# Java / Maven (Desktop App)
+desktop-app/target/
+target/
+*.class
+*.jar
+
+# Android App
+android-app/.gradle/
+android-app/build/
+android-app/*/build/
+android-app/local.properties
+android-app/.cxx/
+.gradle/
+build/
+
+# IDE & OS
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.DS_Store
+Thumbs.db
+*.log

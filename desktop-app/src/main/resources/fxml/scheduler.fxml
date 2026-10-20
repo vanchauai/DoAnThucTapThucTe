@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.SVGPath?>
+<?import java.net.URL?>
+
+<VBox spacing="25" alignment="TOP_LEFT" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.doanthuctap.desktop.controller.SchedulerController">
+    <stylesheets>
+        <URL value="@../css/dark-theme.css" />
+    </stylesheets>
+
+    <padding>
+        <Insets top="30" right="30" bottom="30" left="30" />
+    </padding>
+
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <VBox spacing="5" HBox.hgrow="ALWAYS">
+            <Label text="Cấu hình lịch tự động" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: white;" />
+            <Label text="Tự động đồng bộ và sinh báo cáo hàng ngày" style="-fx-text-fill: #94A3B8; -fx-font-size: 13px;" />
+        </VBox>
+    </HBox>
+
+    <VBox spacing="20" maxWidth="500" style="-fx-background-color: #162842; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 4); -fx-padding: 30;">
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <SVGPath content="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" fill="#00A8E8" scaleX="1.2" scaleY="1.2" />
+            <Label text="Thời gian chạy báo cáo định kỳ" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: white;" />
+        </HBox>
+        
+        <HBox spacing="15" alignment="CENTER_LEFT" style="-fx-padding: 10 0 20 0;">
+            <Label text="Giờ:" style="-fx-text-fill: #94A3B8; -fx-font-weight: bold;" />
+            <Spinner fx:id="spHour" prefWidth="90" style="-fx-background-color: transparent; -fx-border-color: #334155; -fx-border-radius: 6; -fx-background-radius: 6;" />
+            <Label text="Phút:" style="-fx-text-fill: #94A3B8; -fx-font-weight: bold;" />
+            <Spinner fx:id="spMinute" prefWidth="90" style="-fx-background-color: transparent; -fx-border-color: #334155; -fx-border-radius: 6; -fx-background-radius: 6;" />
+        </HBox>
+
+        <Button fx:id="btnSave" text="Lưu cấu hình" onAction="#handleSaveConfig" maxWidth="Infinity" style="-fx-background-color: #10B981; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 12 20; -fx-background-radius: 8; -fx-cursor: hand;" />
+    </VBox>
+</VBox>

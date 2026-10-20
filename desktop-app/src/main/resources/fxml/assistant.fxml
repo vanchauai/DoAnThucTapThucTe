@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.SVGPath?>
+<?import java.net.URL?>
+
+<HBox spacing="20" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.doanthuctap.desktop.controller.DataAssistantController">
+    <stylesheets>
+        <URL value="@../css/dark-theme.css" />
+    </stylesheets>
+
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+
+    <!-- Left Column: Questions -->
+    <VBox spacing="15" prefWidth="350" style="-fx-background-color: #162842; -fx-padding: 20; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 4);">
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <SVGPath content="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" fill="#00A8E8" scaleX="1.2" scaleY="1.2" />
+            <Label text="Trợ lý Dữ liệu" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" />
+        </HBox>
+        <Label text="Chọn một câu hỏi để Trợ lý phân tích dữ liệu ngay lập tức." wrapText="true" style="-fx-text-fill: #94A3B8; -fx-padding: 0 0 10 0;" />
+        <VBox fx:id="questionsContainer" spacing="10">
+            <!-- Nút câu hỏi sẽ được thêm bằng code -->
+        </VBox>
+    </VBox>
+
+    <!-- Right Column: Answer -->
+    <VBox spacing="20" HBox.hgrow="ALWAYS" style="-fx-background-color: #162842; -fx-padding: 30; -fx-background-radius: 12; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 4);">
+        
+        <Label fx:id="lblQuestion" text="Hãy chọn một câu hỏi ở bên trái." wrapText="true" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" />
+        
+        <HBox fx:id="loadingBox" visible="false" managed="false" spacing="10" alignment="CENTER_LEFT">
+            <ProgressIndicator prefWidth="20" prefHeight="20" style="-fx-progress-color: #00A8E8;" />
+            <Label text="Trợ lý đang phân tích dữ liệu..." style="-fx-text-fill: #00A8E8;" />
+        </HBox>
+
+        <VBox fx:id="answerBox" spacing="20" visible="false">
+            <Label fx:id="lblAnswerText" wrapText="true" style="-fx-font-size: 16px; -fx-line-spacing: 5px; -fx-text-fill: #E2E8F0;" />
+            
+            <TableView fx:id="dataTable" prefHeight="200" visible="false" managed="false">
+                <columns>
+                    <TableColumn fx:id="colLabel" text="Hạng mục" prefWidth="250" />
+                    <TableColumn fx:id="colValue" text="Giá trị / Kết quả" prefWidth="200" />
+                </columns>
+            </TableView>
+        </VBox>
+        
+    </VBox>
+</HBox>
